@@ -27,22 +27,22 @@ function validatePipeline() {
       })
       .pipe(plugins.csslint)
       .pipe(plugins.csslint.reporter)
-      // .pipe(plugins.csslint.reporter, customReporter)
-      // .pipe(plugins.csslint.failReporter)
+      .pipe(plugins.csslint.reporter, customReporter)
+      .pipe(plugins.csslint.failReporter)
       .pipe(function() {
         gutil.log('Restoring CSS Filter.');
         return cssFilter.restore;
       });
   }
 
-  // function customReporter(file) {
-  //   var color = gutil.colors;
+  function customReporter(file) {
+    var color = gutil.colors;
 
-  //   gutil.log(color.red('Errors in: ' + file.path));
-  //   file.csslint.results.forEach(function(result) {
-  //     gutil.log(color.grey('line ' + result.error.line + ':' + result.error.message));
-  //   });
-  //   gutil.log(color.red(' -- End Errors -- '));
-  // }
+    gutil.log(color.red('Errors in: ' + file.path));
+    file.csslint.results.forEach(function(result) {
+      gutil.log(color.grey('line ' + result.error.line + ':' + result.error.message));
+    });
+    gutil.log(color.red(' -- End Errors -- '));
+  }
 }
 
