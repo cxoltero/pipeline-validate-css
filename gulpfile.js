@@ -41,7 +41,7 @@ gulp.task('validateCSS', ['validate'], function() {
     .pipe(validateCssPipeline.validateCSS());
 });
 
-gulp.task('build', ['validateCSS'], function() {
+gulp.task('default', ['validateCSS'], function() {
   var dirPath = './coverage';
 
   deleteFolderRecursive(dirPath);
