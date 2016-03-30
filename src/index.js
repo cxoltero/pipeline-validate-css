@@ -2,10 +2,10 @@
 
 'use strict';
 
-var lazypipe = require('lazypipe');
-var plugins = require('gulp-load-plugins')({ lazy: true });
 var gulpFilter = require('gulp-filter');
 var gutil = require('gulp-util');
+var lazypipe = require('lazypipe');
+var plugins = require('gulp-load-plugins')({ lazy: true });
 
 module.exports = validatePipeline;
 

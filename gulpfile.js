@@ -1,8 +1,7 @@
 'use strict';
 
+var fs = require('fs');
 var gulp = require('gulp');
-var validateCssPipeline = require('./src/index.js')();
-var validatePipeline = require('pipeline-validate-js');
 var testPipeline = require('pipeline-test-node')({ plugins: {
   mocha: {
     reporter: 'spec'
@@ -14,7 +13,8 @@ var testPipeline = require('pipeline-test-node')({ plugins: {
     }
   }
 }});
-var fs = require('fs');
+var validateCssPipeline = require('./src/index.js')();
+var validatePipeline = require('pipeline-validate-js');
 
 var config = {
   files: [
