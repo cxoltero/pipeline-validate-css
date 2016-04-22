@@ -49,7 +49,7 @@ describe('check inner functions spies', function() {
   });
 
   it('should be called once customReporter is called', function() {
-    validatePipeline().validateCSS();
+    validatePipeline.validateCSS();
     spy.should.have.been.calledWith('Restoring CSS Filter.');
   });
 
