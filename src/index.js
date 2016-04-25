@@ -16,9 +16,11 @@ module.exports = {
 };
 
 
-function makePipe() {
+function validateCSS() {
+  var stream;
+
   gutil.log('Validating CSS files.');
-  var stream =  lazypipe()
+  stream =  lazypipe()
     .pipe(function() {
       return cssFilter;
     })
@@ -44,8 +46,3 @@ function customReporter(file) {
   gutil.log(color.red(' -- End Errors -- '));
 }
 
-function validateCSS(){
-  var pipeline = makePipe();
-
-  return pipeline;
-}
