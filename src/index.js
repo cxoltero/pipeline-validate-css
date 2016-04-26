@@ -11,12 +11,12 @@ var cssFilter = gulpFilter('*.css', { matchBase: true, restore: true });
 
 module.exports = {
   validateCSS: function() {
-    return validateCSS();
+    return pipelineFactory();
   }
 };
 
 
-function validateCSS() {
+function pipelineFactory() {
   var stream;
 
   gutil.log('Validating CSS files.');
