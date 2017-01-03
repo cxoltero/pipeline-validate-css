@@ -37,7 +37,8 @@ function customFormatter(file) {
   var color = gulpUtil.colors;
 
   file.messages.forEach(function(result) {
-    var call = ' line ' + result.line +  '   col ' + result.col +'   =>   ' + result.message;
+    var call = ' line ' + result.line + '   col ' + result.col + '   =>   ' + result.message;
+
     handyman.log(color.gray(call));
   });
 }
